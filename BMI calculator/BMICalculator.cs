@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace BMI_calculator
 {
-    public partial class Form1 : Form
+    public partial class CalculatorForm : Form
     {
-        public Form1()
+        public CalculatorForm()
         {
             InitializeComponent();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
