@@ -42,11 +42,15 @@ namespace BMI_calculator
         private void BMIbutton_Click(object sender, EventArgs e)
         { 
             decimal BMI = 0;
-            double Height = double.Parse(HeighttextBox.Text);
-            double Weight = double.Parse(WeighttextBox.Text);
+            decimal Height = decimal.Parse(HeighttextBox.Text);
+            decimal Weight = decimal.Parse(WeighttextBox.Text);
             if(UnitButton.Checked)
             {
-BMI= 
+                BMI = Weight / (Height * Height);
+            }
+            else if(ImperialButton.Checked)
+            {
+                BMI = (Weight * 703) / (Height * Height);
             }
         }
     }
