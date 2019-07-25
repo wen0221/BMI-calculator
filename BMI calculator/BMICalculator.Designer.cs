@@ -31,10 +31,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UnitButton = new System.Windows.Forms.RadioButton();
             this.ImperialButton = new System.Windows.Forms.RadioButton();
-            this.Heightlabel = new System.Windows.Forms.Label();
-            this.Weightlabel = new System.Windows.Forms.Label();
             this.WeighttextBox = new System.Windows.Forms.TextBox();
+            this.Weightlabel = new System.Windows.Forms.Label();
             this.HeighttextBox = new System.Windows.Forms.TextBox();
+            this.Heightlabel = new System.Windows.Forms.Label();
             this.BMIBox = new System.Windows.Forms.TextBox();
             this.BMIbutton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -72,7 +72,7 @@
             this.UnitButton.TabStop = true;
             this.UnitButton.Text = "Metric Units";
             this.UnitButton.UseVisualStyleBackColor = true;
-            this.UnitButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.UnitButton.CheckedChanged += new System.EventHandler(this.UnitButton_CheckedChanged);
             // 
             // ImperialButton
             // 
@@ -84,15 +84,14 @@
             this.ImperialButton.TabStop = true;
             this.ImperialButton.Text = "Imperial";
             this.ImperialButton.UseVisualStyleBackColor = true;
+            this.ImperialButton.CheckedChanged += new System.EventHandler(this.ImperialButton_CheckedChanged);
             // 
-            // Heightlabel
+            // WeighttextBox
             // 
-            this.Heightlabel.AutoSize = true;
-            this.Heightlabel.Location = new System.Drawing.Point(3, 85);
-            this.Heightlabel.Name = "Heightlabel";
-            this.Heightlabel.Size = new System.Drawing.Size(144, 31);
-            this.Heightlabel.TabIndex = 3;
-            this.Heightlabel.Text = "My Height:";
+            this.WeighttextBox.Location = new System.Drawing.Point(159, 144);
+            this.WeighttextBox.Name = "WeighttextBox";
+            this.WeighttextBox.Size = new System.Drawing.Size(100, 38);
+            this.WeighttextBox.TabIndex = 5;
             // 
             // Weightlabel
             // 
@@ -103,19 +102,21 @@
             this.Weightlabel.TabIndex = 6;
             this.Weightlabel.Text = "My Weight:";
             // 
-            // WeighttextBox
-            // 
-            this.WeighttextBox.Location = new System.Drawing.Point(159, 144);
-            this.WeighttextBox.Name = "WeighttextBox";
-            this.WeighttextBox.Size = new System.Drawing.Size(100, 38);
-            this.WeighttextBox.TabIndex = 5;
-            // 
             // HeighttextBox
             // 
             this.HeighttextBox.Location = new System.Drawing.Point(159, 88);
             this.HeighttextBox.Name = "HeighttextBox";
             this.HeighttextBox.Size = new System.Drawing.Size(100, 38);
             this.HeighttextBox.TabIndex = 4;
+            // 
+            // Heightlabel
+            // 
+            this.Heightlabel.AutoSize = true;
+            this.Heightlabel.Location = new System.Drawing.Point(3, 85);
+            this.Heightlabel.Name = "Heightlabel";
+            this.Heightlabel.Size = new System.Drawing.Size(144, 31);
+            this.Heightlabel.TabIndex = 3;
+            this.Heightlabel.Text = "My Height:";
             // 
             // BMIBox
             // 
@@ -135,6 +136,7 @@
             this.BMIbutton.TabIndex = 2;
             this.BMIbutton.Text = "Calculate BMI ";
             this.BMIbutton.UseVisualStyleBackColor = false;
+            this.BMIbutton.Click += new System.EventHandler(this.BMIbutton_Click);
             // 
             // CalculatorForm
             // 

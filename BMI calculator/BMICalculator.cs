@@ -26,5 +26,28 @@ namespace BMI_calculator
         {
 
         }
+
+        private void UnitButton_CheckedChanged(object sender, EventArgs e)
+        {
+            HeighttextBox.Text = "Meters";
+            WeighttextBox.Text = "Kg";
+        }
+
+        private void ImperialButton_CheckedChanged(object sender, EventArgs e)
+        {
+            HeighttextBox.Text = "Inches";
+            WeighttextBox.Text = "Pounds";
+        }
+
+        private void BMIbutton_Click(object sender, EventArgs e)
+        { 
+            decimal BMI = 0;
+            double Height = double.Parse(HeighttextBox.Text);
+            double Weight = double.Parse(WeighttextBox.Text);
+            if(UnitButton.Checked)
+            {
+BMI= 
+            }
+        }
     }
 }
