@@ -65,6 +65,7 @@
             // UnitButton
             // 
             this.UnitButton.AutoSize = true;
+            this.UnitButton.ForeColor = System.Drawing.Color.Black;
             this.UnitButton.Location = new System.Drawing.Point(3, 3);
             this.UnitButton.Name = "UnitButton";
             this.UnitButton.Size = new System.Drawing.Size(150, 35);
@@ -77,6 +78,7 @@
             // ImperialButton
             // 
             this.ImperialButton.AutoSize = true;
+            this.ImperialButton.ForeColor = System.Drawing.Color.Black;
             this.ImperialButton.Location = new System.Drawing.Point(3, 44);
             this.ImperialButton.Name = "ImperialButton";
             this.ImperialButton.Size = new System.Drawing.Size(128, 35);
@@ -96,6 +98,7 @@
             // Weightlabel
             // 
             this.Weightlabel.AutoSize = true;
+            this.Weightlabel.ForeColor = System.Drawing.Color.Black;
             this.Weightlabel.Location = new System.Drawing.Point(3, 141);
             this.Weightlabel.Name = "Weightlabel";
             this.Weightlabel.Size = new System.Drawing.Size(149, 31);
@@ -112,6 +115,7 @@
             // Heightlabel
             // 
             this.Heightlabel.AutoSize = true;
+            this.Heightlabel.ForeColor = System.Drawing.Color.Black;
             this.Heightlabel.Location = new System.Drawing.Point(3, 85);
             this.Heightlabel.Name = "Heightlabel";
             this.Heightlabel.Size = new System.Drawing.Size(144, 31);
@@ -142,11 +146,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(304, 441);
             this.Controls.Add(this.BMIbutton);
             this.Controls.Add(this.BMIBox);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Bisque;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.MaximizeBox = false;

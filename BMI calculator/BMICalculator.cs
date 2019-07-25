@@ -52,6 +52,22 @@ namespace BMI_calculator
             {
                 BMI = (Weight * 703) / (Height * Height);
             }
+            if(BMI<18.5M)
+            {
+                BMIBox.Text = "BMI: " + BMI + " Underweight";
+            }
+            else if (BMI >= 18.5M && BMI <= 24.9M)
+            {
+                BMIBox.Text = "BMI: " + BMI + " Normal";
+            }
+            else if (BMI >= 25M && BMI <= 29.9M)
+            {
+                BMIBox.Text = "BMI: " + BMI + " Overweight";
+            }
+            else if (BMI >= 30M)
+            {
+                BMIBox.Text = "BMI: " + BMI + " Obese";
+            }
         }
     }
 }
