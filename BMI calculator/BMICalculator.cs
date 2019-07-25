@@ -12,6 +12,9 @@ namespace BMI_calculator
 {
     public partial class CalculatorForm : Form
     {
+        public string outputString { get; set; }
+        public float outputValue { get; set; }
+        public bool decimalExists { get; set; }
         public CalculatorForm()
         {
             InitializeComponent();
@@ -69,5 +72,56 @@ namespace BMI_calculator
                 BMIBox.Text = "BMI: " + BMI + " Obese";
             }
         }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void calculate(object sender, EventArgs e)
+        {
+            Button TheButton = sender as Button;
+            var tag = TheButton.Tag.ToString();
+            int numericValue = 0;
+
+
+            bool numericResult = int.TryParse(tag, out numericValue);
+
+            if (numericResult)
+            {
+                int maxSize = (decimalExists) ? 5 : 3;
+
+                if (outputString == "0")
+                {
+                    outputString = tag;
+                }
+                else if (outputString.Length < maxSize)
+                {
+                    outputString += tag;
+                }
+
+                HeighttextBox.Text = outputString;
+                WeighttextBox.Text = outputString;
+            }
+            else
+            {
+                switch (tag)
+                {
+                    case "Reset":
+                       ResetNumber();
+                        break;                
+                }
+            }
+        }
+        private void ResetNumber()
+        {
+            HeighttextBox.Text = "0";
+            WeighttextBox.Text = "0";
+            outputString = "0";
+            outputValue = 0.0f;
+            decimalExists = false;
+        }
+
     }
+    
 }
