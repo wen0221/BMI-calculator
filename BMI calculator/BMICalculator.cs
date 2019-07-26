@@ -16,7 +16,7 @@ namespace BMI_calculator
         public string outputString { get; set; }
         public float outputValue { get; set; }
         public bool decimalExists { get; set; }
-       public TextBox EnterDataToBox { get; set; }
+       public TextBox textbox { get; set; }
         public CalculatorForm()
         {
             InitializeComponent();
@@ -100,8 +100,8 @@ namespace BMI_calculator
                 else if(outputString.Length<3)
                 {
                     outputString += tag;
-                }                
-                HeighttextBox.Text = outputString;
+                }
+                textbox.Text = outputString;
             }
             else
             {
@@ -150,16 +150,20 @@ namespace BMI_calculator
 
         private void HeightDataMouseDown(object sender, MouseEventArgs e)
         {
-            HeighttextBox.Text = null;
-            EnterDataToBox = HeighttextBox;
+            //HeighttextBox.Text = null;
+            textbox = HeighttextBox;
+            HeighttextBox.Clear();
+            outputString = "";
         }
 
         private void WeightDataMouseDone(object sender, MouseEventArgs e)
         {
-           WeighttextBox.Text = null;
-            EnterDataToBox = WeighttextBox;
+            //WeighttextBox.Text = null;
+            textbox = WeighttextBox;
+            WeighttextBox.Clear();
+            outputString = "";
 
-           
+
         }
     }
     
