@@ -12,9 +12,11 @@ namespace BMI_calculator
 {
     public partial class CalculatorForm : Form
     {
+       
         public string outputString { get; set; }
         public float outputValue { get; set; }
         public bool decimalExists { get; set; }
+       public TextBox EnterDataToBox { get; set; }
         public CalculatorForm()
         {
             InitializeComponent();
@@ -32,14 +34,14 @@ namespace BMI_calculator
 
         private void UnitButton_CheckedChanged(object sender, EventArgs e)
         {
-            HeighttextBox.Text = "Meters";
-            WeighttextBox.Text = "Kg";
+            HeighttextBox.Text = "m";
+            WeighttextBox.Text = "kg";
         }
 
         private void ImperialButton_CheckedChanged(object sender, EventArgs e)
         {
-            HeighttextBox.Text = "Inches";
-            WeighttextBox.Text = "Pounds";
+            HeighttextBox.Text = "pounds";
+            WeighttextBox.Text = "Inc";
         }
 
         private void BMIbutton_Click(object sender, EventArgs e)
@@ -89,19 +91,17 @@ namespace BMI_calculator
 
             if (numericResult)
             {
-                int maxSize = (decimalExists) ? 5 : 3;
+                
 
-                if (outputString == "0")
+                if (outputString == null)
                 {
                     outputString = tag;
                 }
-                else if (outputString.Length < maxSize)
+                else if(outputString.Length<3)
                 {
                     outputString += tag;
-                }
-
+                }                
                 HeighttextBox.Text = outputString;
-                WeighttextBox.Text = outputString;
             }
             else
             {
@@ -109,19 +109,58 @@ namespace BMI_calculator
                 {
                     case "Reset":
                        ResetNumber();
-                        break;                
+                        break;
+                    
                 }
             }
         }
-        private void ResetNumber()
+        
+        
+            private void ResetNumber()
         {
             HeighttextBox.Text = "0";
             WeighttextBox.Text = "0";
-            outputString = "0";
+            BMIBox.Text = null;
+            outputString = null;
             outputValue = 0.0f;
             decimalExists = false;
         }
 
+        private void ActiveLabel_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+        private void HeighttextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void WeighttextBox_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void height(object sender, EventArgs e)
+        {
+            //HeighttextBox.Text = "0";
+            //HeighttextBox.Text = outputString;
+
+        }
+
+        private void HeightDataMouseDown(object sender, MouseEventArgs e)
+        {
+            HeighttextBox.Text = null;
+            EnterDataToBox = HeighttextBox;
+        }
+
+        private void WeightDataMouseDone(object sender, MouseEventArgs e)
+        {
+           WeighttextBox.Text = null;
+            EnterDataToBox = WeighttextBox;
+
+           
+        }
     }
     
 }

@@ -30,22 +30,22 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UnitButton = new System.Windows.Forms.RadioButton();
-            this.ImperialButton = new System.Windows.Forms.RadioButton();
             this.WeighttextBox = new System.Windows.Forms.TextBox();
             this.Weightlabel = new System.Windows.Forms.Label();
             this.HeighttextBox = new System.Windows.Forms.TextBox();
             this.Heightlabel = new System.Windows.Forms.Label();
+            this.ImperialButton = new System.Windows.Forms.RadioButton();
             this.BMIBox = new System.Windows.Forms.TextBox();
             this.BMIbutton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.sevenbotton = new System.Windows.Forms.Button();
-            this.eightbotton = new System.Windows.Forms.Button();
-            this.ninebotton = new System.Windows.Forms.Button();
-            this.fourbotton = new System.Windows.Forms.Button();
-            this.fivebotton = new System.Windows.Forms.Button();
-            this.sixbotton = new System.Windows.Forms.Button();
-            this.onebotton = new System.Windows.Forms.Button();
             this.twobotton = new System.Windows.Forms.Button();
+            this.onebotton = new System.Windows.Forms.Button();
+            this.sixbotton = new System.Windows.Forms.Button();
+            this.fivebotton = new System.Windows.Forms.Button();
+            this.fourbotton = new System.Windows.Forms.Button();
+            this.ninebotton = new System.Windows.Forms.Button();
+            this.eightbotton = new System.Windows.Forms.Button();
+            this.sevenbotton = new System.Windows.Forms.Button();
             this.threebotton = new System.Windows.Forms.Button();
             this.ResetButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -88,25 +88,15 @@
             this.UnitButton.UseVisualStyleBackColor = false;
             this.UnitButton.CheckedChanged += new System.EventHandler(this.UnitButton_CheckedChanged);
             // 
-            // ImperialButton
-            // 
-            this.ImperialButton.AutoSize = true;
-            this.ImperialButton.ForeColor = System.Drawing.Color.Salmon;
-            this.ImperialButton.Location = new System.Drawing.Point(159, 3);
-            this.ImperialButton.Name = "ImperialButton";
-            this.ImperialButton.Size = new System.Drawing.Size(118, 35);
-            this.ImperialButton.TabIndex = 2;
-            this.ImperialButton.TabStop = true;
-            this.ImperialButton.Text = "Imperial";
-            this.ImperialButton.UseVisualStyleBackColor = true;
-            this.ImperialButton.CheckedChanged += new System.EventHandler(this.ImperialButton_CheckedChanged);
-            // 
             // WeighttextBox
             // 
             this.WeighttextBox.Location = new System.Drawing.Point(159, 92);
             this.WeighttextBox.Name = "WeighttextBox";
             this.WeighttextBox.Size = new System.Drawing.Size(100, 38);
             this.WeighttextBox.TabIndex = 5;
+            this.WeighttextBox.Click += new System.EventHandler(this.ActiveLabel_Click);
+            this.WeighttextBox.TextChanged += new System.EventHandler(this.WeighttextBox_TextChanged);
+            this.WeighttextBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WeightDataMouseDone);
             // 
             // Weightlabel
             // 
@@ -124,6 +114,9 @@
             this.HeighttextBox.Name = "HeighttextBox";
             this.HeighttextBox.Size = new System.Drawing.Size(100, 38);
             this.HeighttextBox.TabIndex = 4;
+            this.HeighttextBox.Click += new System.EventHandler(this.ActiveLabel_Click);
+            this.HeighttextBox.TextChanged += new System.EventHandler(this.HeighttextBox_TextChanged);
+            this.HeighttextBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeightDataMouseDown);
             // 
             // Heightlabel
             // 
@@ -135,19 +128,32 @@
             this.Heightlabel.TabIndex = 3;
             this.Heightlabel.Text = "My Height:";
             // 
+            // ImperialButton
+            // 
+            this.ImperialButton.AutoSize = true;
+            this.ImperialButton.ForeColor = System.Drawing.Color.Salmon;
+            this.ImperialButton.Location = new System.Drawing.Point(159, 3);
+            this.ImperialButton.Name = "ImperialButton";
+            this.ImperialButton.Size = new System.Drawing.Size(118, 35);
+            this.ImperialButton.TabIndex = 2;
+            this.ImperialButton.TabStop = true;
+            this.ImperialButton.Text = "Imperial";
+            this.ImperialButton.UseVisualStyleBackColor = true;
+            this.ImperialButton.CheckedChanged += new System.EventHandler(this.ImperialButton_CheckedChanged);
+            // 
             // BMIBox
             // 
-            this.BMIBox.Location = new System.Drawing.Point(148, 162);
+            this.BMIBox.Location = new System.Drawing.Point(12, 148);
             this.BMIBox.Multiline = true;
             this.BMIBox.Name = "BMIBox";
-            this.BMIBox.Size = new System.Drawing.Size(144, 140);
+            this.BMIBox.Size = new System.Drawing.Size(286, 100);
             this.BMIBox.TabIndex = 1;
             this.BMIBox.TabStop = false;
             // 
             // BMIbutton
             // 
             this.BMIbutton.BackColor = System.Drawing.Color.LightCoral;
-            this.BMIbutton.Location = new System.Drawing.Point(151, 365);
+            this.BMIbutton.Location = new System.Drawing.Point(154, 365);
             this.BMIbutton.Name = "BMIbutton";
             this.BMIbutton.Size = new System.Drawing.Size(144, 41);
             this.BMIbutton.TabIndex = 2;
@@ -161,7 +167,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.84615F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.38462F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.53846F));
-            this.tableLayoutPanel2.Controls.Add(this.threebotton, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.twobotton, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.onebotton, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.sixbotton, 2, 1);
@@ -170,6 +175,7 @@
             this.tableLayoutPanel2.Controls.Add(this.ninebotton, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.eightbotton, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.sevenbotton, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.threebotton, 2, 2);
             this.tableLayoutPanel2.ForeColor = System.Drawing.Color.LightCoral;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 251);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -182,27 +188,60 @@
             this.tableLayoutPanel2.TabIndex = 3;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
-            // sevenbotton
+            // twobotton
             // 
-            this.sevenbotton.Location = new System.Drawing.Point(3, 3);
-            this.sevenbotton.Name = "sevenbotton";
-            this.sevenbotton.Size = new System.Drawing.Size(37, 48);
-            this.sevenbotton.TabIndex = 0;
-            this.sevenbotton.Tag = "7";
-            this.sevenbotton.Text = "7";
-            this.sevenbotton.UseVisualStyleBackColor = true;
-            this.sevenbotton.Click += new System.EventHandler(this.calculate);
+            this.twobotton.Location = new System.Drawing.Point(46, 107);
+            this.twobotton.Name = "twobotton";
+            this.twobotton.Size = new System.Drawing.Size(37, 48);
+            this.twobotton.TabIndex = 7;
+            this.twobotton.Tag = "2";
+            this.twobotton.Text = "2";
+            this.twobotton.UseVisualStyleBackColor = true;
+            this.twobotton.Click += new System.EventHandler(this.calculate);
             // 
-            // eightbotton
+            // onebotton
             // 
-            this.eightbotton.Location = new System.Drawing.Point(46, 3);
-            this.eightbotton.Name = "eightbotton";
-            this.eightbotton.Size = new System.Drawing.Size(37, 48);
-            this.eightbotton.TabIndex = 1;
-            this.eightbotton.Tag = "8";
-            this.eightbotton.Text = "8";
-            this.eightbotton.UseVisualStyleBackColor = true;
-            this.eightbotton.Click += new System.EventHandler(this.calculate);
+            this.onebotton.Location = new System.Drawing.Point(3, 107);
+            this.onebotton.Name = "onebotton";
+            this.onebotton.Size = new System.Drawing.Size(37, 48);
+            this.onebotton.TabIndex = 6;
+            this.onebotton.Tag = "1";
+            this.onebotton.Text = "1";
+            this.onebotton.UseVisualStyleBackColor = true;
+            this.onebotton.Click += new System.EventHandler(this.calculate);
+            // 
+            // sixbotton
+            // 
+            this.sixbotton.Location = new System.Drawing.Point(91, 57);
+            this.sixbotton.Name = "sixbotton";
+            this.sixbotton.Size = new System.Drawing.Size(36, 44);
+            this.sixbotton.TabIndex = 5;
+            this.sixbotton.Tag = "6";
+            this.sixbotton.Text = "6";
+            this.sixbotton.UseVisualStyleBackColor = true;
+            this.sixbotton.Click += new System.EventHandler(this.calculate);
+            // 
+            // fivebotton
+            // 
+            this.fivebotton.Location = new System.Drawing.Point(46, 57);
+            this.fivebotton.Name = "fivebotton";
+            this.fivebotton.Size = new System.Drawing.Size(37, 44);
+            this.fivebotton.TabIndex = 4;
+            this.fivebotton.Tag = "5";
+            this.fivebotton.Text = "5";
+            this.fivebotton.UseVisualStyleBackColor = true;
+            this.fivebotton.Click += new System.EventHandler(this.calculate);
+            // 
+            // fourbotton
+            // 
+            this.fourbotton.Location = new System.Drawing.Point(3, 57);
+            this.fourbotton.Name = "fourbotton";
+            this.fourbotton.Size = new System.Drawing.Size(37, 44);
+            this.fourbotton.TabIndex = 3;
+            this.fourbotton.Tag = "4";
+            this.fourbotton.Text = "4";
+            this.fourbotton.UseVisualStyleBackColor = true;
+            this.fourbotton.Click += new System.EventHandler(this.calculate);
             // 
             // ninebotton
             // 
@@ -218,60 +257,27 @@
             this.ninebotton.UseVisualStyleBackColor = true;
             this.ninebotton.Click += new System.EventHandler(this.calculate);
             // 
-            // fourbotton
+            // eightbotton
             // 
-            this.fourbotton.Location = new System.Drawing.Point(3, 57);
-            this.fourbotton.Name = "fourbotton";
-            this.fourbotton.Size = new System.Drawing.Size(37, 44);
-            this.fourbotton.TabIndex = 3;
-            this.fourbotton.Tag = "4";
-            this.fourbotton.Text = "4";
-            this.fourbotton.UseVisualStyleBackColor = true;
-            this.fourbotton.Click += new System.EventHandler(this.calculate);
+            this.eightbotton.Location = new System.Drawing.Point(46, 3);
+            this.eightbotton.Name = "eightbotton";
+            this.eightbotton.Size = new System.Drawing.Size(37, 48);
+            this.eightbotton.TabIndex = 1;
+            this.eightbotton.Tag = "8";
+            this.eightbotton.Text = "8";
+            this.eightbotton.UseVisualStyleBackColor = true;
+            this.eightbotton.Click += new System.EventHandler(this.calculate);
             // 
-            // fivebotton
+            // sevenbotton
             // 
-            this.fivebotton.Location = new System.Drawing.Point(46, 57);
-            this.fivebotton.Name = "fivebotton";
-            this.fivebotton.Size = new System.Drawing.Size(37, 44);
-            this.fivebotton.TabIndex = 4;
-            this.fivebotton.Tag = "5";
-            this.fivebotton.Text = "5";
-            this.fivebotton.UseVisualStyleBackColor = true;
-            this.fivebotton.Click += new System.EventHandler(this.calculate);
-            // 
-            // sixbotton
-            // 
-            this.sixbotton.Location = new System.Drawing.Point(91, 57);
-            this.sixbotton.Name = "sixbotton";
-            this.sixbotton.Size = new System.Drawing.Size(36, 44);
-            this.sixbotton.TabIndex = 5;
-            this.sixbotton.Tag = "6";
-            this.sixbotton.Text = "6";
-            this.sixbotton.UseVisualStyleBackColor = true;
-            this.sixbotton.Click += new System.EventHandler(this.calculate);
-            // 
-            // onebotton
-            // 
-            this.onebotton.Location = new System.Drawing.Point(3, 107);
-            this.onebotton.Name = "onebotton";
-            this.onebotton.Size = new System.Drawing.Size(37, 48);
-            this.onebotton.TabIndex = 6;
-            this.onebotton.Tag = "1";
-            this.onebotton.Text = "1";
-            this.onebotton.UseVisualStyleBackColor = true;
-            this.onebotton.Click += new System.EventHandler(this.calculate);
-            // 
-            // twobotton
-            // 
-            this.twobotton.Location = new System.Drawing.Point(46, 107);
-            this.twobotton.Name = "twobotton";
-            this.twobotton.Size = new System.Drawing.Size(37, 48);
-            this.twobotton.TabIndex = 7;
-            this.twobotton.Tag = "2";
-            this.twobotton.Text = "2";
-            this.twobotton.UseVisualStyleBackColor = true;
-            this.twobotton.Click += new System.EventHandler(this.calculate);
+            this.sevenbotton.Location = new System.Drawing.Point(3, 3);
+            this.sevenbotton.Name = "sevenbotton";
+            this.sevenbotton.Size = new System.Drawing.Size(37, 48);
+            this.sevenbotton.TabIndex = 0;
+            this.sevenbotton.Tag = "7";
+            this.sevenbotton.Text = "7";
+            this.sevenbotton.UseVisualStyleBackColor = true;
+            this.sevenbotton.Click += new System.EventHandler(this.calculate);
             // 
             // threebotton
             // 
@@ -287,7 +293,7 @@
             // ResetButton
             // 
             this.ResetButton.ForeColor = System.Drawing.Color.Salmon;
-            this.ResetButton.Location = new System.Drawing.Point(154, 308);
+            this.ResetButton.Location = new System.Drawing.Point(154, 292);
             this.ResetButton.Name = "ResetButton";
             this.ResetButton.Size = new System.Drawing.Size(141, 42);
             this.ResetButton.TabIndex = 4;
